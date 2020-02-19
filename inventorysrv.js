@@ -40,10 +40,12 @@ const dummyData = [
 	}
 ];
 
+const dummyCats = [ 'Számítástechnika', 'Konyhatechnika', 'Fűtéstechnika', 'Árnyékolástechnika' ];
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-	res.render('home', { title: 'Termékek', items: dummyData });
+	res.render('home', { title: 'Termékek', items: dummyData, categories: dummyCats });
 });
 
 app.listen(PORT, () => console.log(`App is started and listening on port ${PORT}`));
